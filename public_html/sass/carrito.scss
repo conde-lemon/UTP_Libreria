@@ -1,0 +1,261 @@
+@use "sass:color";
+
+$color-bg-1: #e6f0ff;
+$color-bg-2: #d2e7ff;
+$color-bg-3: #f0f7ff;
+$color-primary: #ff6600;
+$color-danger: #e53935;
+$color-success: #43a047;
+$shadow-light: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+$primary-hover: color.adjust($color-primary, $lightness: -10%);
+$danger-hover: color.adjust($color-danger, $lightness: -10%);
+$success-hover: color.adjust($color-success, $lightness: -10%);
+
+
+@keyframes softGradient {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+  color: #333;
+
+  background: linear-gradient(135deg, $color-bg-1, $color-bg-2, $color-bg-3);
+  background-size: 300% 300%;
+  animation: softGradient 15s ease infinite;
+}
+
+
+.carrito-container {
+  max-width: 1200px;
+  margin: 112px auto 40px;
+  background: rgba(255, 255, 255, 0.75);
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: $shadow-light;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+
+  h1 {
+    text-align: center;
+    margin-bottom: 25px;
+  }
+}
+
+.carrito-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+}
+
+.productos-section {
+  .lista-carrito {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.resumen-section {
+  .resumen-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: $shadow-light;
+    position: sticky;
+    top: 120px;
+    
+    h3 {
+      margin-top: 0;
+      margin-bottom: 20px;
+      color: $color-primary;
+    }
+    
+    .punto-recojo {
+      margin: 20px 0;
+      
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+      }
+      
+      select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        font-size: 14px;
+      }
+    }
+    
+    .btn-pagar {
+      width: 100%;
+      text-align: center;
+      margin-top: 20px;
+    }
+  }
+}
+
+
+.producto {
+  display: flex;
+  gap: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #ccc;
+  flex-wrap: wrap;
+
+  img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+  }
+
+  .info {
+    flex: 1;
+
+    h3 {
+      margin: 0;
+    }
+
+    p {
+      margin: 8px 0;
+    }
+  }
+}
+
+
+.cantidad-control {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 10px 0;
+
+  button {
+    background-color: $color-primary;
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.3s;
+
+    &:hover {
+      background-color: $primary-hover;
+    }
+  }
+
+  span {
+    font-size: 17px;
+    font-weight: bold;
+    min-width: 20px;
+    text-align: center;
+  }
+}
+
+
+.eliminar {
+  background-color: $color-danger;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  margin-top: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: $danger-hover;
+  }
+}
+
+
+.btn-pagar {
+  background-color: $color-success;
+  color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  display: inline-block;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: $success-hover;
+  }
+}
+
+
+.total {
+  font-size: 19px;
+  font-weight: bold;
+  padding: 15px 0;
+  border-top: 2px solid #eee;
+  border-bottom: 2px solid #eee;
+  margin: 15px 0;
+}
+
+
+@media (max-width: 768px) {
+  .carrito-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .resumen-section {
+    order: -1;
+  }
+  
+  .resumen-card {
+    position: static !important;
+  }
+  
+  .producto {
+    flex-direction: column;
+    text-align: left;
+    align-items: flex-start;
+
+    img {
+      width: 120px;
+      height: 120px;
+      align-self: center;
+    }
+  }
+
+  .carrito-container {
+    margin: 92px 10px 20px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .producto img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .btn-pagar {
+    width: 100%;
+    text-align: center;
+  }
+
+  .resumen {
+    text-align: center;
+  }
+}

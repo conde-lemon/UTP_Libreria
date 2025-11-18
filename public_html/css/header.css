@@ -1,0 +1,193 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  height: 72px;
+  gap: 20px;
+}
+.header .logo img {
+  height: 85px;
+  cursor: pointer;
+  transition: all 280ms cubic-bezier(0.2, 0.9, 0.2, 1);
+}
+.header .logo img:hover {
+  transform: scale(1.03);
+}
+
+.search-container {
+  flex: 1;
+  max-width: 400px;
+  margin: 0 20px;
+}
+.search-container .input-group .form-control {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+}
+.search-container .input-group .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+.search-container .input-group .form-control:focus {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+.search-container .input-group .btn-outline-light {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+.search-container .input-group .btn-outline-light:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.desktop-menu {
+  display: none;
+}
+.desktop-menu a {
+  color: #ffffff;
+  font-weight: 600;
+  padding: 10px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 280ms cubic-bezier(0.2, 0.9, 0.2, 1);
+}
+.desktop-menu a:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.hamburger {
+  width: 42px;
+  height: 36px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  z-index: 1050;
+  margin-left: auto;
+}
+.hamburger .bar {
+  width: 24px;
+  height: 3px;
+  background: #ffffff;
+  border-radius: 3px;
+  position: relative;
+  display: block;
+  transition: all 280ms cubic-bezier(0.2, 0.9, 0.2, 1);
+}
+.hamburger .bar::before, .hamburger .bar::after {
+  content: "";
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  background: inherit;
+  border-radius: inherit;
+  transition: all 280ms cubic-bezier(0.2, 0.9, 0.2, 1);
+}
+.hamburger .bar::before {
+  transform: translateY(-7px);
+}
+.hamburger .bar::after {
+  transform: translateY(7px);
+}
+.hamburger.active .bar {
+  background: transparent;
+}
+.hamburger.active .bar::before {
+  transform: rotate(45deg);
+}
+.hamburger.active .bar::after {
+  transform: rotate(-45deg);
+}
+
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 280ms cubic-bezier(0.2, 0.9, 0.2, 1);
+}
+.menu-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.nav-panel {
+  position: fixed;
+  top: 0;
+  right: -50%;
+  width: 50%;
+  height: 100vh;
+  background: #ffffff;
+  padding: 72px 20px 20px;
+  transition: right 280ms cubic-bezier(0.2, 0.9, 0.2, 1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+.nav-panel.active {
+  right: 0;
+}
+.nav-panel .mobile-search {
+  margin-bottom: 20px;
+}
+.nav-panel .mobile-search .input-group .form-control {
+  border-color: #d1d5db;
+}
+.nav-panel .mobile-search .input-group .form-control:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.25);
+}
+.nav-panel a {
+  display: block;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #111827;
+  border-radius: 8px;
+  transition: all 280ms cubic-bezier(0.2, 0.9, 0.2, 1);
+}
+.nav-panel a:hover {
+  background: color-mix(in srgb, #2563eb 20%, #ffffff);
+}
+
+.user i {
+  transition: transform 280ms cubic-bezier(0.2, 0.9, 0.2, 1);
+}
+.user i:hover {
+  transform: scale(1.05);
+}
+
+@media (min-width: 900px) {
+  .desktop-menu {
+    display: flex;
+    gap: 20px;
+  }
+  .hamburger {
+    display: none;
+  }
+  .desktop-only {
+    display: block;
+  }
+}
+@media (max-width: 899px) {
+  .desktop-only {
+    display: none;
+  }
+  .search-container {
+    display: none;
+  }
+}
+

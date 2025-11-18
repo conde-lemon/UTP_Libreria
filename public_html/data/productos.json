@@ -1,0 +1,64 @@
+{
+  "libros": [
+    {
+      "id": 1,
+      "nombre": "Libro de Física",
+      "precio": 52.00,
+      "imagen": "recourses/libros/LibroFisica.webp",
+      "categoria": "libros",
+      "descripcion": "Manual completo de física con ejercicios prácticos y teoría avanzada"
+    },
+    {
+      "id": 2,
+      "nombre": "Libro de Química",
+      "precio": 48.00,
+      "imagen": "recourses/libros/libroQuimica.jpg",
+      "categoria": "libros",
+      "descripcion": "Libro de química orgánica e inorgánica para estudiantes universitarios"
+    }
+  ],
+  "papeleria": [
+    {
+      "id": 3,
+      "nombre": "Cartulina Kraft",
+      "precio": 3.50,
+      "imagen": "recourses/papeleria/cartulina-kraft.webp",
+      "categoria": "papeleria",
+      "descripcion": "Cartulina kraft natural para proyectos y manualidades"
+    },
+    {
+      "id": 4,
+      "nombre": "Cartulina de Colores",
+      "precio": 5.00,
+      "imagen": "recourses/papeleria/cartulinaDeColores.webp",
+      "categoria": "papeleria",
+      "descripcion": "Pack de cartulinas de colores variados para trabajos creativos"
+    }
+  ],
+  "utiles": [
+    {
+      "id": 5,
+      "nombre": "Carpetas con Fastener",
+      "precio": 12.00,
+      "imagen": "recourses/utiles/carpetas-filesconfaster.webp",
+      "categoria": "utiles",
+      "descripcion": "Set de carpetas con fastener para organizar documentos"
+    },
+    {
+      "id": 6,
+      "nombre": "Engrapadora",
+      "precio": 18.50,
+      "imagen": "recourses/utiles/engrampadora.webp",
+      "categoria": "utiles",
+      "descripcion": "Engrapadora resistente para uso escolar y oficina"
+    },
+    {
+      "id": 7,
+      "nombre": "USB 32GB",
+      "precio": 25.00,
+      "imagen": "recourses/utiles/USB.webp",
+      "categoria": "utiles",
+      "descripcion": "Memoria USB de 32GB para almacenar archivos y documentos"
+    }
+  ]
+}

@@ -1,0 +1,217 @@
+@keyframes softGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+  color: #333;
+  background: linear-gradient(135deg, #e6f0ff, #d2e7ff, #f0f7ff);
+  background-size: 300% 300%;
+  animation: softGradient 15s ease infinite;
+}
+
+.carrito-container {
+  max-width: 1200px;
+  margin: 112px auto 40px;
+  background: rgba(255, 255, 255, 0.75);
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.carrito-container h1 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.carrito-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+}
+
+.productos-section .lista-carrito {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.resumen-section .resumen-card {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 120px;
+}
+.resumen-section .resumen-card h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #ff6600;
+}
+.resumen-section .resumen-card .punto-recojo {
+  margin: 20px 0;
+}
+.resumen-section .resumen-card .punto-recojo label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+.resumen-section .resumen-card .punto-recojo select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+.resumen-section .resumen-card .btn-pagar {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.producto {
+  display: flex;
+  gap: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #ccc;
+  flex-wrap: wrap;
+}
+.producto img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+}
+.producto .info {
+  flex: 1;
+}
+.producto .info h3 {
+  margin: 0;
+}
+.producto .info p {
+  margin: 8px 0;
+}
+
+.cantidad-control {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 10px 0;
+}
+.cantidad-control button {
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+.cantidad-control button:hover {
+  background-color: rgb(204, 81.6, 0);
+}
+.cantidad-control span {
+  font-size: 17px;
+  font-weight: bold;
+  min-width: 20px;
+  text-align: center;
+}
+
+.eliminar {
+  background-color: #e53935;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  margin-top: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.eliminar:hover {
+  background-color: rgb(204.6578947368, 30.3947368421, 26.3421052632);
+}
+
+.btn-pagar {
+  background-color: #43a047;
+  color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  display: inline-block;
+  transition: 0.3s;
+}
+.btn-pagar:hover {
+  background-color: rgb(51.9471365639, 124.0528634361, 55.0484581498);
+}
+
+.total {
+  font-size: 19px;
+  font-weight: bold;
+  padding: 15px 0;
+  border-top: 2px solid #eee;
+  border-bottom: 2px solid #eee;
+  margin: 15px 0;
+}
+
+@media (max-width: 768px) {
+  .carrito-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .resumen-section {
+    order: -1;
+  }
+  .resumen-card {
+    position: static !important;
+  }
+  .producto {
+    flex-direction: column;
+    text-align: left;
+    align-items: flex-start;
+  }
+  .producto img {
+    width: 120px;
+    height: 120px;
+    align-self: center;
+  }
+  .carrito-container {
+    margin: 92px 10px 20px;
+    padding: 20px;
+  }
+}
+@media (max-width: 480px) {
+  .producto img {
+    width: 100px;
+    height: 100px;
+  }
+  .btn-pagar {
+    width: 100%;
+    text-align: center;
+  }
+  .resumen {
+    text-align: center;
+  }
+}
+
+/*# sourceMappingURL=Carrito.css.map */

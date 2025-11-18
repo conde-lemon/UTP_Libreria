@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Perfil del usuario</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/header.css">
+
+    <link rel="stylesheet" href="css/perfil.css"> 
+</head>
+<body>
+    <header class="header"></header>        
+
+        <div class="perfil-container">
+            <div class="perfil-lateral">
+                <div class="user-photo">
+                    <img src="recourses/usuarios/imagen-usuario1.webp" alt="usuario">
+                </div>
+                <div class="usuario-id">
+                    <p><strong>ID de usuario:</strong> <span id="idUsuario">cargando...</span></p>
+                    <p><strong>Correo:</strong> <span id="correoUsuario">cargando...</span></p>
+                </div>
+            </div>
+
+            <div class="perfil-contenido">
+                <div class="recuadro-carrito">
+                    <div class="contenido-recuadro">
+                        <div class="productos-carrito" id="contenedorCarrito"></div>
+                        <div class="botones">
+                            <button id="rastrearBtn">Rastrear</button>
+                            <button>Dejar una reseña</button>
+                            <button>Devolución o reembolso</button>
+                        </div>
+                    </div>
+                    <div id="pestañaRastrear" class="pestaña-rastrear">
+                        <div id="modalReseña" class="modal-formulario">
+                            <div class="contenido-modal">
+                                <h3>Dejar una reseña</h3>
+                                <textarea id="textoReseña" placeholder="Escribe tu opinión aquí..."></textarea>
+                                <div class="acciones-formulario">
+                                    <button onclick="enviarReseña()">Enviar</button>
+                                    <button onclick="cerrarModal('modalReseña')">Cancelar</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="modalDevolucion" class="modal-formulario">
+                            <div class="contenido-modal">
+                                <h3>Solicitud de devolución/reembolso</h3>
+                                <textarea id="textoDevolucion" placeholder="Explica el motivo..."></textarea>
+                                <div class="acciones-formulario">
+                                    <button onclick="enviarDevolucion()">Enviar</button>
+                                    <button onclick="cerrarModal('modalDevolucion')">Cancelar</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="rastreo-info">
+                            <h3>Detalles de envío</h3>
+                            <p><strong>Estado:</strong> ENTREGADO el 6 marzo 2025, 9:15am</p>
+                            <ul>
+                                <li>ENTREGADO - 20 junio 2025, 9:15am</li>
+                                <li>INICIO DE RUTA - 21 junio 2025, 10:20pm</li>
+                                <li>PAQUETE EN TRANSITO - 27 junio 2025</li>
+                                <li>RECEPCIONADO EN HUB - 13 julioo 2025</li>
+                                <li>EN ADUANA - 13 de julio 2025</li>
+                                <li>EN TRANSITO  14 de julio 2025 </li>
+                                <li>ENVÍO EN TRÁNSITO HACIA LA ADMINISTRACION - NO DISPONIBLE PARA ENTREGA - 14 Julio 2025</li>
+                                <li>LLEGADA A OFICINA ENTREGA - 16 julio 2025 </li>
+                                <li>ENVÍO ENTREGADO 18 julio 2025</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/load-header.js"></script>
+        <script src="js/PerfilDeUsuario.js"></script>
+        
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                if (typeof loadHeader === 'function') loadHeader();
+            });
+        </script>
+    </body>
+</html>

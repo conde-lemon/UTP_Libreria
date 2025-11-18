@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="logo">
+    <img src="recourses/logo/logo_tup.png" alt="Biblioteca UTP" />
+  </div>
+
+  <div class="search-container">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Buscar productos..." id="search-input">
+      <button class="btn btn-outline-light" type="button" id="search-btn">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </div>
+
+  <nav class="desktop-menu">
+    <a href="Productos.html">Productos</a>
+    <a href="Carrito.html">Carrito</a>
+    <a href="PerfilDeUsuario.html">Perfil</a>
+  </nav>
+
+  <div class="user desktop-only">
+    <i class="bi bi-person-circle" style="font-size: 38px; color: white; cursor: pointer;" onclick="window.location.href='PerfilDeUsuario.html'"></i>
+  </div>
+
+  <button class="hamburger" aria-label="Abrir menú">
+    <span class="bar"></span>
+  </button>
+</div>
+
+<div class="menu-overlay"></div>
+<div class="nav-panel">
+  <div class="mobile-search">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Buscar productos..." id="mobile-search-input">
+      <button class="btn btn-primary" type="button" id="mobile-search-btn">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </div>
+  <hr style="margin: 20px 0; border-color: #e5e7eb;">
+  <a href="Productos.html">Productos</a>
+  <a href="Carrito.html">Carrito</a>
+  <a href="PerfilDeUsuario.html">Perfil</a>
+  <hr style="margin: 20px 0; border-color: #e5e7eb;">
+  <a href="PerfilDeUsuario.html"><i class="bi bi-person-circle"></i> Mi Perfil</a>
+</div>
