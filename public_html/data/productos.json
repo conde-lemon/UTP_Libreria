@@ -6,7 +6,12 @@
       "precio": 52.00,
       "imagen": "recourses/libros/LibroFisica.webp",
       "categoria": "libros",
-      "descripcion": "Manual completo de física con ejercicios prácticos y teoría avanzada"
+      "descripcion": "Manual completo de física con ejercicios prácticos y teoría avanzada.",
+      "long_description": "Este manual de física cubre desde los conceptos fundamentales de la mecánica clásica hasta los principios de la termodinámica y el electromagnetismo. Ideal para estudiantes de ciencias e ingeniería que buscan una comprensión profunda y aplicada.",
+      "stock": 15,
+      "sku": "LIB-FIS-001",
+      "rating": 4.5,
+      "reviews": 120
     },
     {
       "id": 2,
@@ -14,7 +19,12 @@
       "precio": 48.00,
       "imagen": "recourses/libros/libroQuimica.jpg",
       "categoria": "libros",
-      "descripcion": "Libro de química orgánica e inorgánica para estudiantes universitarios"
+      "descripcion": "Libro de química orgánica e inorgánica para estudiantes universitarios.",
+      "long_description": "Una guía exhaustiva que explora las reacciones químicas, la estructura atómica y las propiedades de los elementos. Incluye capítulos especiales sobre bioquímica y química ambiental, con ejemplos resueltos.",
+      "stock": 25,
+      "sku": "LIB-QUIM-002",
+      "rating": 4.7,
+      "reviews": 95
     }
   ],
   "papeleria": [
@@ -24,7 +34,12 @@
       "precio": 3.50,
       "imagen": "recourses/papeleria/cartulina-kraft.webp",
       "categoria": "papeleria",
-      "descripcion": "Cartulina kraft natural para proyectos y manualidades"
+      "descripcion": "Cartulina kraft natural para proyectos y manualidades.",
+      "long_description": "Pliego de cartulina Kraft de 180g/m², perfecta para manualidades, tarjetas, y empaques con un toque rústico y ecológico. Su resistencia la hace ideal para proyectos que requieren durabilidad.",
+      "stock": 150,
+      "sku": "PAP-KRAFT-003",
+      "rating": 4.8,
+      "reviews": 250
     },
     {
       "id": 4,
@@ -32,7 +47,12 @@
       "precio": 5.00,
       "imagen": "recourses/papeleria/cartulinaDeColores.webp",
       "categoria": "papeleria",
-      "descripcion": "Pack de cartulinas de colores variados para trabajos creativos"
+      "descripcion": "Pack de cartulinas de colores variados para trabajos creativos.",
+      "long_description": "Paquete con 20 hojas de cartulina en 10 colores vibrantes. Ideal para proyectos escolares, decoración y cualquier manualidad que necesite un toque de color. Gramaje de 150g/m².",
+      "stock": 200,
+      "sku": "PAP-COLOR-004",
+      "rating": 4.6,
+      "reviews": 180
     }
   ],
   "utiles": [
@@ -42,7 +62,12 @@
       "precio": 12.00,
       "imagen": "recourses/utiles/carpetas-filesconfaster.webp",
       "categoria": "utiles",
-      "descripcion": "Set de carpetas con fastener para organizar documentos"
+      "descripcion": "Set de carpetas con fastener para organizar documentos.",
+      "long_description": "Juego de 5 carpetas de plástico resistente con fastener metálico de dos piezas para asegurar documentos perforados. Perfectas para informes, presentaciones y archivo de documentos importantes.",
+      "stock": 80,
+      "sku": "UTI-CARP-005",
+      "rating": 4.4,
+      "reviews": 75
     },
     {
       "id": 6,
@@ -50,7 +75,12 @@
       "precio": 18.50,
       "imagen": "recourses/utiles/engrampadora.webp",
       "categoria": "utiles",
-      "descripcion": "Engrapadora resistente para uso escolar y oficina"
+      "descripcion": "Engrapadora resistente para uso escolar y oficina.",
+      "long_description": "Engrapadora de metal con base antideslizante, con capacidad para 25 hojas. Utiliza grapas estándar 26/6. Su diseño ergonómico asegura un grapado cómodo y sin esfuerzo. Incluye una caja de 1000 grapas.",
+      "stock": 60,
+      "sku": "UTI-ENGR-006",
+      "rating": 4.9,
+      "reviews": 150
     },
     {
       "id": 7,
@@ -58,7 +88,12 @@
       "precio": 25.00,
       "imagen": "recourses/utiles/USB.webp",
       "categoria": "utiles",
-      "descripcion": "Memoria USB de 32GB para almacenar archivos y documentos"
+      "descripcion": "Memoria USB de 32GB para almacenar archivos y documentos.",
+      "long_description": "Unidad flash USB 3.0 de 32GB para una transferencia de datos rápida y eficiente. Su diseño compacto y con tapa la hace segura y fácil de transportar. Compatible con Windows, macOS y Linux.",
+      "stock": 120,
+      "sku": "UTI-USB-007",
+      "rating": 4.7,
+      "reviews": 320
     }
   ]
 }

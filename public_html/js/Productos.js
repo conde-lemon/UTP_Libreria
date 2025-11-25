@@ -46,8 +46,42 @@ function mostrarProductos(productosAMostrar) {
             <button class="btn-agregar" onclick="agregarAlCarrito(${producto.id})">
                 <i class="bi bi-cart-plus"></i> Agregar al Carrito
             </button>
+            <button class="btn-detalles" onclick="mostrarDetalles(${producto.id})">
+                <i class="bi bi-eye"></i> Ver Detalles
+            </button>
         </div>
     `).join('');
+}
+
+function mostrarDetalles(id) {
+    const producto = productos.find(p => p.id === id);
+    if (!producto) return;
+
+    const modalOverlay = document.getElementById('modal-overlay');
+    
+    modalOverlay.innerHTML = `
+        <div class="modal-content">
+            <button class="modal-close" onclick="cerrarModal()"><i class="bi bi-x-lg"></i></button>
+            <img src="${producto.imagen}" alt="${producto.nombre}" onerror="this.src='recourses/logo/logo_tup.png'">
+            <h2>${producto.nombre}</h2>
+            <p>${producto.descripcion}</p>
+            <div class="precio">S/ ${producto.precio.toFixed(2)}</div>
+        </div>
+    `;
+    
+    modalOverlay.style.display = 'flex';
+    setTimeout(() => {
+        modalOverlay.classList.add('active');
+    }, 10);
+}
+
+function cerrarModal() {
+    const modalOverlay = document.getElementById('modal-overlay');
+    modalOverlay.classList.remove('active');
+    setTimeout(() => {
+        modalOverlay.style.display = 'none';
+        modalOverlay.innerHTML = '';
+    }, 300);
 }
 
 function filtrarPorCategoria(categoria) {

@@ -1,13 +1,15 @@
 <div class="container">
   <div class="logo">
-    <img src="recourses/logo/logo_tup.png" alt="Biblioteca UTP" />
+    <a href="index.html">
+      <img src="recourses/logo/logo_tup.png" alt="Biblioteca UTP" />
+    </a>
   </div>
 
   <div class="search-container">
     <div class="input-group">
       <input type="text" class="form-control" placeholder="Buscar productos..." id="search-input">
-      <button class="btn btn-outline-light" type="button" id="search-btn">
-        <i class="bi bi-search"></i>
+      <button class="btn btn-outline-light" type="button" id="search-btn" title="Buscar" aria-label="Buscar productos">
+        <i class="bi bi-search" aria-hidden="true"></i>
       </button>
     </div>
   </div>
@@ -32,7 +34,7 @@
   <div class="mobile-search">
     <div class="input-group">
       <input type="text" class="form-control" placeholder="Buscar productos..." id="mobile-search-input">
-      <button class="btn btn-primary" type="button" id="mobile-search-btn">
+      <button class="btn btn-primary" type="button" id="mobile-search-btn" title="Buscar" aria-label="Buscar productos">
         <i class="bi bi-search"></i>
       </button>
     </div>

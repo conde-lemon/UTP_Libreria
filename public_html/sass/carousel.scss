@@ -1,0 +1,247 @@
+// carousel.scss
+/*
+Estilos mejorados para el Carrusel de Productos Destacados
+- Avance producto por producto
+- Layout horizontal fluido y responsive
+*/
+
+.productos-destacados {
+  padding: 2rem 0;
+  position: relative;
+  overflow: hidden;
+
+  .carousel-inner {
+    padding: 1rem 0;
+    overflow: visible;
+  }
+
+  // Contenedor principal del carrusel
+  .carousel-container {
+    position: relative;
+    width: 100%;
+  }
+
+  // Wrapper que contiene todos los productos en fila
+  .carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 1rem;
+    padding: 0.5rem 0;
+    
+    // Para pantallas muy pequeñas, menos gap
+    @media (max-width: 576px) {
+      gap: 0.5rem;
+    }
+  }
+
+  // Cada item del carrusel
+  .carousel-item {
+    flex: 0 0 calc(16.666% - 0.83rem); // 6 items con gap
+    min-width: calc(16.666% - 0.83rem);
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    .producto-card {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      
+      img {
+        height: 180px;
+        object-fit: cover;
+        width: 100%;
+      }
+      
+      h3 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        line-height: 1.3;
+      }
+      
+      .descripcion {
+        font-size: 0.85rem;
+        flex-grow: 1;
+        margin-bottom: 0.75rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      
+      .precio {
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: #2c5aa0;
+        margin-bottom: 0.75rem;
+      }
+    }
+  }
+
+  // Controles del carrusel
+  .carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    border: none;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    opacity: 0.8;
+    
+    &:hover {
+      opacity: 1;
+      background: rgba(0, 0, 0, 0.9);
+      transform: translateY(-50%) scale(1.1);
+    }
+    
+    &:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+      transform: translateY(-50%) scale(1);
+    }
+    
+    i {
+      font-size: 1.2rem;
+    }
+  }
+
+  .carousel-control-prev {
+    left: -25px;
+  }
+
+  .carousel-control-next {
+    right: -25px;
+  }
+
+  // Indicadores (opcional)
+  .carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    
+    .indicator {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ddd;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      
+      &.active {
+        background: #2c5aa0;
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  // Responsive
+  @media (max-width: 1200px) {
+    .carousel-item {
+      flex: 0 0 calc(20% - 0.8rem); // 5 items
+      min-width: calc(20% - 0.8rem);
+    }
+  }
+
+  @media (max-width: 992px) {
+    .carousel-item {
+      flex: 0 0 calc(25% - 0.75rem); // 4 items
+      min-width: calc(25% - 0.75rem);
+    }
+    
+    .carousel-control {
+      width: 45px;
+      height: 45px;
+      
+      &.carousel-control-prev {
+        left: -15px;
+      }
+      
+      &.carousel-control-next {
+        right: -15px;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .carousel-item {
+      flex: 0 0 calc(33.333% - 0.67rem); // 3 items
+      min-width: calc(33.333% - 0.67rem);
+    }
+    
+    .carousel-control {
+      width: 40px;
+      height: 40px;
+      
+      i {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  @media (max-width: 576px) {
+    .carousel-item {
+      flex: 0 0 calc(50% - 0.5rem); // 2 items
+      min-width: calc(50% - 0.5rem);
+    }
+    
+    .carousel-control {
+      display: none; // Ocultar en móviles muy pequeños
+    }
+    
+    .producto-card {
+      img {
+        height: 150px;
+      }
+      
+      h3 {
+        font-size: 0.9rem;
+      }
+      
+      .descripcion {
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  @media (max-width: 400px) {
+    .carousel-item {
+      flex: 0 0 calc(100% - 1rem); // 1 item en móviles muy pequeños
+      min-width: calc(100% - 1rem);
+    }
+  }
+}
+
+// Estados de carga
+.carousel-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  
+  .spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #2c5aa0;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
